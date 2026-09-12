@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Ngân hàng tình huống mô hình hóa – Chương VII",
+    "source": "TOÁN 11 – Tập 2 – Chương VII: Quan hệ vuông góc trong không gian"
+  },
+  "process": [
+    {
+      "step": 1,
+      "name": "Nhận diện vấn đề thực tiễn"
+    },
+    {
+      "step": 2,
+      "name": "Thiết lập mô hình toán học"
+    },
+    {
+      "step": 3,
+      "name": "Giải quyết mô hình"
+    },
+    {
+      "step": 4,
+      "name": "Đối chiếu kết quả với thực tiễn"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "traffic_interchange",
+      "title": "Nút giao thông khác mức",
+      "lesson": "Bài 22",
+      "source_pdf_page": 1,
+      "book_page": 27,
+      "modeling_focus": "Mô hình hóa hai hướng giao thông thành hai đường thẳng không đồng phẳng và xác định góc giữa chúng."
+    },
+    {
+      "id": "basketball_pole",
+      "title": "Kiểm tra cột bóng rổ",
+      "lesson": "Bài 23",
+      "source_pdf_page": 10,
+      "book_page": 36,
+      "modeling_focus": "Dùng quan hệ đường thẳng vuông góc với mặt phẳng và tam giác vuông để kiểm tra độ thẳng đứng."
+    },
+    {
+      "id": "aircraft",
+      "title": "Góc cất cánh của máy bay",
+      "lesson": "Bài 24",
+      "source_pdf_page": 17,
+      "book_page": 43,
+      "modeling_focus": "Liên hệ góc giữa đường bay và mặt phẳng nằm ngang với độ cao."
+    },
+    {
+      "id": "access_ramp",
+      "title": "Độ dốc đường dành cho người khuyết tật",
+      "lesson": "Bài 25",
+      "source_pdf_page": 27,
+      "book_page": 53,
+      "modeling_focus": "Liên hệ độ dốc với tang của góc giữa đường dốc và mặt phẳng nằm ngang."
+    },
+    {
+      "id": "bridge_clearance",
+      "title": "Khung hạn chế chiều cao ở đầu cầu vượt",
+      "lesson": "Bài 26",
+      "source_pdf_page": 31,
+      "book_page": 57,
+      "modeling_focus": "Khoảng cách giữa thanh ngang khung và mặt đường dốc; đưa ra kết luận xe có qua được hay không."
+    },
+    {
+      "id": "tripod",
+      "title": "Tính chiều cao giá đỡ ba chân",
+      "lesson": "Bài 26",
+      "source_pdf_page": 33,
+      "book_page": 59,
+      "modeling_focus": "Chiều cao là khoảng cách từ đỉnh tới mặt phẳng đáy."
+    },
+    {
+      "id": "air_conditioner",
+      "title": "Chọn công suất điều hòa",
+      "lesson": "Bài 27",
+      "source_pdf_page": 35,
+      "book_page": 61,
+      "modeling_focus": "Tính thể tích phòng rồi chuyển thành công suất theo tỉ lệ BTU/m³."
+    }
+  ]
+}

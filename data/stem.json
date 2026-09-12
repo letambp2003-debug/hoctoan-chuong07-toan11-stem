@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "STEM Challenge – Thiết kế mô hình cầu vượt giao thông",
+    "source_basis": [
+      {
+        "lesson": "Bài 22",
+        "pdf_page": 1,
+        "basis": "Nút giao khác mức và góc giữa hai đường thẳng."
+      },
+      {
+        "lesson": "Bài 23",
+        "pdf_pages": [
+          5,
+          6,
+          10
+        ],
+        "basis": "Đường thẳng vuông góc với mặt phẳng."
+      },
+      {
+        "lesson": "Bài 24",
+        "pdf_pages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "basis": "Phép chiếu vuông góc và góc đường thẳng – mặt phẳng."
+      },
+      {
+        "lesson": "Bài 26",
+        "pdf_pages": [
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "basis": "Khoảng cách, đường vuông góc chung và bối cảnh cầu vượt."
+      }
+    ],
+    "note": "Đây là thiết kế STEM mới tổng hợp từ kiến thức và bối cảnh trong tài liệu nguồn."
+  },
+  "challenge": {
+    "title": "Thiết kế mô hình cầu vượt giao thông an toàn",
+    "driving_question": "Làm thế nào thiết kế cầu vượt đúng quan hệ hình học, bảo đảm khoảng cách an toàn và kiểm chứng được bằng GeoGebra 3D?",
+    "roles": [
+      "Kĩ sư toán học",
+      "Kĩ sư mô hình 3D",
+      "Kĩ sư kết cấu",
+      "Nhóm kiểm định"
+    ],
+    "constraints": [
+      "Hai trục giao thông được mô hình hóa bởi hai đường thẳng chéo nhau.",
+      "Trụ đỡ vuông góc với mặt phẳng đáy.",
+      "Phải xác định đoạn vuông góc chung biểu diễn khoảng cách an toàn.",
+      "Có bản dựng GeoGebra 3D trước khi chế tạo.",
+      "Ghi rõ tỉ lệ và sai số."
+    ],
+    "workflow": [
+      {
+        "stage": "ASK",
+        "task": "Phân tích yêu cầu thiết kế."
+      },
+      {
+        "stage": "MODEL",
+        "task": "Thiết lập mô hình hình học."
+      },
+      {
+        "stage": "DESIGN",
+        "task": "Đề xuất phương án bố trí dầm và trụ."
+      },
+      {
+        "stage": "SIMULATE",
+        "task": "Dựng và đo trên GeoGebra 3D."
+      },
+      {
+        "stage": "BUILD",
+        "task": "Chế tạo mô hình vật lí."
+      },
+      {
+        "stage": "TEST",
+        "task": "Đo lại khoảng cách, góc và sai số."
+      },
+      {
+        "stage": "IMPROVE",
+        "task": "Điều chỉnh theo kết quả kiểm thử."
+      }
+    ],
+    "advanced_mode": [
+      "Tối ưu chiều cao cầu với ràng buộc khoảng cách an toàn.",
+      "So sánh nhiều phương án theo an toàn và vật liệu.",
+      "Bắt buộc chứng minh toán học cho kết quả quan sát trên GeoGebra."
+    ],
+    "assessment": {
+      "math_accuracy": 40,
+      "digital_modeling": 25,
+      "engineering_product": 20,
+      "collaboration_defense": 15
+    }
+  }
+}

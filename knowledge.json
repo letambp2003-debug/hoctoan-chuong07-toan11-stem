@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "grade": 11,
+    "chapter": "VII",
+    "chapter_title": "Quan hệ vuông góc trong không gian",
+    "source": "TOÁN 11 – Tập 2 – Chương VII: Quan hệ vuông góc trong không gian",
+    "source_file": "TOAN11_SGK_T2_C07.pdf",
+    "scope": "Bài 22–27 và bài tập cuối chương",
+    "note": "Dữ liệu được cấu trúc lại từ tài liệu nguồn người dùng cung cấp."
+  },
+  "lessons": [
+    {
+      "id": "bai22",
+      "title": "Hai đường thẳng vuông góc",
+      "source_pages_pdf": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "book_pages": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "terms": [
+        "góc giữa hai đường thẳng",
+        "hai đường thẳng vuông góc"
+      ],
+      "learning_outcomes": [
+        "Nhận biết góc giữa hai đường thẳng.",
+        "Nhận biết hai đường thẳng vuông góc.",
+        "Xác định góc giữa hai đường thẳng trong tình huống đơn giản.",
+        "Vận dụng quan hệ vuông góc để mô tả tình huống thực tế."
+      ],
+      "core_knowledge": [
+        {
+          "concept": "Góc giữa hai đường thẳng",
+          "summary": "Xác định qua hai đường lần lượt song song với hai đường đã cho và cùng đi qua một điểm; số đo từ 0° đến 90°."
+        },
+        {
+          "concept": "Hai đường thẳng vuông góc",
+          "summary": "Hai đường thẳng vuông góc khi góc giữa chúng bằng 90°."
+        }
+      ],
+      "source_contexts": [
+        "Nút giao thông khác mức",
+        "Kim tự tháp Kheops",
+        "Khung cửa",
+        "Cấu kiện nhà gỗ truyền thống"
+      ]
+    },
+    {
+      "id": "bai23",
+      "title": "Đường thẳng vuông góc với mặt phẳng",
+      "source_pages_pdf": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "book_pages": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "terms": [
+        "đường thẳng vuông góc với mặt phẳng",
+        "mặt phẳng trung trực của đoạn thẳng"
+      ],
+      "learning_outcomes": [
+        "Nhận biết đường thẳng vuông góc với mặt phẳng.",
+        "Nêu và vận dụng điều kiện để đường thẳng vuông góc với mặt phẳng.",
+        "Giải thích liên hệ song song – vuông góc.",
+        "Vận dụng vào thực tế."
+      ],
+      "core_knowledge": [
+        {
+          "concept": "Đường thẳng vuông góc với mặt phẳng",
+          "summary": "Một đường thẳng vuông góc với mặt phẳng nếu vuông góc với mọi đường thẳng trong mặt phẳng đó."
+        },
+        {
+          "concept": "Tiêu chuẩn nhận biết",
+          "summary": "Nếu một đường thẳng vuông góc với hai đường thẳng cắt nhau cùng thuộc một mặt phẳng thì nó vuông góc với mặt phẳng."
+        },
+        {
+          "concept": "Tính duy nhất",
+          "summary": "Qua một điểm cho trước có duy nhất một mặt phẳng vuông góc với một đường thẳng cho trước; và duy nhất một đường thẳng vuông góc với một mặt phẳng cho trước."
+        },
+        {
+          "concept": "Mặt phẳng trung trực",
+          "summary": "Mặt phẳng đi qua trung điểm đoạn thẳng và vuông góc với đoạn đó; các điểm trên mặt phẳng cách đều hai đầu mút."
+        }
+      ],
+      "source_contexts": [
+        "Tháp nghiêng Pisa",
+        "Cánh cửa và mặt sàn",
+        "Cột treo quần áo",
+        "Dây dọi",
+        "Cột bóng rổ"
+      ]
+    },
+    {
+      "id": "bai24",
+      "title": "Phép chiếu vuông góc. Góc giữa đường thẳng và mặt phẳng",
+      "source_pages_pdf": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "book_pages": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "terms": [
+        "phép chiếu vuông góc",
+        "hình chiếu vuông góc",
+        "định lí ba đường vuông góc",
+        "góc giữa đường thẳng và mặt phẳng"
+      ],
+      "learning_outcomes": [
+        "Nhận biết phép chiếu vuông góc.",
+        "Xác định hình chiếu của điểm, đường thẳng và hình đơn giản.",
+        "Vận dụng định lí ba đường vuông góc.",
+        "Xác định và tính góc giữa đường thẳng và mặt phẳng."
+      ],
+      "core_knowledge": [
+        {
+          "concept": "Phép chiếu vuông góc",
+          "summary": "Phép chiếu song song lên một mặt phẳng theo phương vuông góc với mặt phẳng đó."
+        },
+        {
+          "concept": "Định lí ba đường vuông góc",
+          "summary": "Một đường trong mặt phẳng vuông góc với đường thẳng đã cho khi và chỉ khi nó vuông góc với hình chiếu vuông góc của đường thẳng đó lên mặt phẳng."
+        },
+        {
+          "concept": "Góc giữa đường thẳng và mặt phẳng",
+          "summary": "Nếu đường thẳng vuông góc mặt phẳng thì góc bằng 90°; nếu không, góc bằng góc giữa đường thẳng và hình chiếu của nó trên mặt phẳng."
+        }
+      ],
+      "source_contexts": [
+        "Bóng của cột",
+        "Máy bay cất cánh",
+        "Trục Trái Đất và mặt phẳng quỹ đạo",
+        "Đo góc dây căng",
+        "Tia sáng Mặt Trời"
+      ]
+    },
+    {
+      "id": "bai25",
+      "title": "Hai mặt phẳng vuông góc",
+      "source_pages_pdf": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "book_pages": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "terms": [
+        "góc giữa hai mặt phẳng",
+        "hai mặt phẳng vuông góc",
+        "góc nhị diện",
+        "góc phẳng của góc nhị diện",
+        "hình lăng trụ đứng",
+        "hình lăng trụ đều",
+        "hình hộp đứng",
+        "hình hộp chữ nhật",
+        "hình lập phương",
+        "hình chóp đều",
+        "hình chóp cụt đều"
+      ],
+      "learning_outcomes": [
+        "Nhận biết góc giữa hai mặt phẳng và hai mặt phẳng vuông góc.",
+        "Xác định điều kiện để hai mặt phẳng vuông góc.",
+        "Vận dụng tính chất hai mặt phẳng vuông góc.",
+        "Nhận biết và tính góc phẳng của góc nhị diện.",
+        "Nhận biết các khối đặc biệt liên quan."
+      ],
+      "core_knowledge": [
+        {
+          "concept": "Góc giữa hai mặt phẳng",
+          "summary": "Xác định bằng góc giữa hai đường thẳng lần lượt vuông góc với hai mặt phẳng."
+        },
+        {
+          "concept": "Hai mặt phẳng vuông góc",
+          "summary": "Hai mặt phẳng vuông góc khi góc giữa chúng bằng 90°."
+        },
+        {
+          "concept": "Điều kiện vuông góc",
+          "summary": "Hai mặt phẳng vuông góc nếu một mặt phẳng chứa một đường thẳng vuông góc với mặt phẳng kia."
+        },
+        {
+          "concept": "Góc nhị diện",
+          "summary": "Hình gồm hai nửa mặt phẳng chung bờ; góc phẳng được tạo bởi hai tia trong hai nửa mặt phẳng và cùng vuông góc với cạnh chung."
+        }
+      ],
+      "source_contexts": [
+        "Góc giữa mặt ghế và lưng ghế",
+        "Cửa sổ tròn",
+        "Kinh tuyến – vĩ tuyến",
+        "Mái nhà",
+        "Đường dốc cho người khuyết tật",
+        "Kim tự tháp kính Louvre"
+      ]
+    },
+    {
+      "id": "bai26",
+      "title": "Khoảng cách",
+      "source_pages_pdf": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "book_pages": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "terms": [
+        "khoảng cách",
+        "chiều cao của hình chóp",
+        "chiều cao của hình lăng trụ",
+        "đường vuông góc chung"
+      ],
+      "learning_outcomes": [
+        "Xác định khoảng cách giữa điểm, đường thẳng và mặt phẳng.",
+        "Xác định đường vuông góc chung của hai đường thẳng chéo nhau trong trường hợp đơn giản.",
+        "Vận dụng kiến thức về khoảng cách vào thực tế."
+      ],
+      "core_knowledge": [
+        {
+          "concept": "Khoảng cách điểm – đường thẳng",
+          "summary": "Độ dài từ điểm tới hình chiếu vuông góc trên đường thẳng; là giá trị nhỏ nhất."
+        },
+        {
+          "concept": "Khoảng cách điểm – mặt phẳng",
+          "summary": "Độ dài từ điểm tới hình chiếu vuông góc trên mặt phẳng; là giá trị nhỏ nhất."
+        },
+        {
+          "concept": "Khoảng cách đường thẳng – mặt phẳng song song",
+          "summary": "Bằng khoảng cách từ một điểm bất kỳ trên đường thẳng đến mặt phẳng."
+        },
+        {
+          "concept": "Khoảng cách hai mặt phẳng song song",
+          "summary": "Bằng khoảng cách từ một điểm của mặt phẳng này đến mặt phẳng kia."
+        },
+        {
+          "concept": "Đường vuông góc chung",
+          "summary": "Đường thẳng cắt cả hai đường chéo nhau và vuông góc với cả hai; đoạn giữa hai giao điểm có độ dài bằng khoảng cách giữa chúng."
+        }
+      ],
+      "source_contexts": [
+        "Đầu phun chữa cháy",
+        "Khung hạn chế chiều cao ở cầu vượt",
+        "Giá đỡ ba chân",
+        "Độ sâu bể nước",
+        "Mặt Trời đứng bóng"
+      ]
+    },
+    {
+      "id": "bai27",
+      "title": "Thể tích",
+      "source_pages_pdf": [
+        35,
+        36,
+        37
+      ],
+      "book_pages": [
+        61,
+        62,
+        63
+      ],
+      "terms": [
+        "thể tích khối hộp",
+        "thể tích khối lăng trụ",
+        "thể tích khối chóp",
+        "thể tích khối chóp cụt đều"
+      ],
+      "learning_outcomes": [
+        "Nhận biết công thức thể tích các khối.",
+        "Tính thể tích trong tình huống đơn giản.",
+        "Vận dụng vào thực tế."
+      ],
+      "core_knowledge": [
+        {
+          "concept": "Khối chóp",
+          "summary": "V = (1/3)·S·h."
+        },
+        {
+          "concept": "Khối chóp cụt đều",
+          "summary": "V = (1/3)·(S + S' + √(S·S'))·h."
+        },
+        {
+          "concept": "Khối lăng trụ và khối hộp",
+          "summary": "V = S·h."
+        }
+      ],
+      "source_contexts": [
+        "Điều hòa theo thể tích phòng",
+        "Sọt hình chóp cụt đều",
+        "Thiết kế thùng từ tấm tôn"
+      ]
+    }
+  ],
+  "end_of_chapter": {
+    "source_pages_pdf": [
+      38,
+      39
+    ],
+    "book_pages": [
+      64,
+      65
+    ],
+    "components": [
+      "Trắc nghiệm tổng hợp",
+      "Tự luận tổng hợp về khoảng cách, thể tích, đường vuông góc chung và góc"
+    ]
+  }
+}

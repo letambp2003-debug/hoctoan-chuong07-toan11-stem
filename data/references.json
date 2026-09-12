@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Nguồn dữ liệu và quy tắc sử dụng",
+    "primary_source": "TOÁN 11 – Tập 2 – Chương VII: Quan hệ vuông góc trong không gian",
+    "source_file": "TOAN11_SGK_T2_C07.pdf"
+  },
+  "sources": [
+    {
+      "id": "sgk_ch7",
+      "type": "primary",
+      "title": "TOÁN 11 – Tập 2 – Chương VII: Quan hệ vuông góc trong không gian",
+      "coverage": "PDF 39 trang, tương ứng trang sách 27–65",
+      "sections": [
+        {
+          "lesson": "Bài 22",
+          "pdf_pages": "1–4",
+          "book_pages": "27–30"
+        },
+        {
+          "lesson": "Bài 23",
+          "pdf_pages": "5–11",
+          "book_pages": "31–37"
+        },
+        {
+          "lesson": "Bài 24",
+          "pdf_pages": "12–17",
+          "book_pages": "38–43"
+        },
+        {
+          "lesson": "Bài 25",
+          "pdf_pages": "18–27",
+          "book_pages": "44–53"
+        },
+        {
+          "lesson": "Bài 26",
+          "pdf_pages": "28–34",
+          "book_pages": "54–60"
+        },
+        {
+          "lesson": "Bài 27",
+          "pdf_pages": "35–37",
+          "book_pages": "61–63"
+        },
+        {
+          "lesson": "Bài tập cuối chương",
+          "pdf_pages": "38–39",
+          "book_pages": "64–65"
+        }
+      ]
+    }
+  ],
+  "usage_guidelines": [
+    "Dùng SGK làm nguồn chuẩn về thuật ngữ, cấu trúc kiến thức và phạm vi chương.",
+    "Không cần nhúng nguyên PDF vào app công khai; app đọc các file JSON đã cấu trúc.",
+    "Các tình huống và STEM Challenge mới nên ghi rõ là học liệu giáo viên biên soạn dựa trên nguồn.",
+    "Mỗi mục dữ liệu lưu trang nguồn để giáo viên kiểm tra ngược lại tài liệu."
+  ]
+}

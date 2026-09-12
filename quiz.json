@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "title": "Ngân hàng 22 câu – Chương VII",
+    "source": "TOÁN 11 – Tập 2 – Chương VII: Quan hệ vuông góc trong không gian",
+    "note": "Câu hỏi mới được biên soạn bám kiến thức nguồn."
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "mc",
+      "topic": "Bài 22",
+      "question": "Góc giữa hai đường thẳng trong không gian được lấy trong khoảng nào?",
+      "options": [
+        "0° đến 90°",
+        "0° đến 180°",
+        "90° đến 180°",
+        "0° đến 360°"
+      ],
+      "answer": 0
+    },
+    {
+      "id": 2,
+      "type": "mc",
+      "topic": "Bài 22",
+      "question": "Hai đường thẳng vuông góc khi:",
+      "options": [
+        "Chúng cắt nhau",
+        "Chúng song song",
+        "Góc giữa chúng bằng 90°",
+        "Chúng cùng mặt phẳng"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 3,
+      "type": "mc",
+      "topic": "Bài 23",
+      "question": "Muốn chứng minh d vuông góc (P), thường chứng minh d vuông góc với:",
+      "options": [
+        "Một đường bất kì trong (P)",
+        "Hai đường cắt nhau trong (P)",
+        "Hai đường song song trong (P)",
+        "Một điểm trong (P)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 4,
+      "type": "mc",
+      "topic": "Bài 23",
+      "question": "Hai đường thẳng phân biệt cùng vuông góc một mặt phẳng thì:",
+      "options": [
+        "Cắt nhau",
+        "Vuông góc nhau",
+        "Song song nhau",
+        "Chéo nhau"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 5,
+      "type": "mc",
+      "topic": "Bài 24",
+      "question": "Phép chiếu vuông góc lên (P) là phép chiếu song song theo phương:",
+      "options": [
+        "Song song (P)",
+        "Vuông góc (P)",
+        "Bất kì",
+        "Nằm trong (P)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 6,
+      "type": "mc",
+      "topic": "Bài 24",
+      "question": "Nếu d vuông góc (P), góc giữa d và (P) bằng:",
+      "options": [
+        "0°",
+        "30°",
+        "45°",
+        "90°"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 7,
+      "type": "mc",
+      "topic": "Bài 25",
+      "question": "Hai mặt phẳng vuông góc khi góc giữa chúng bằng:",
+      "options": [
+        "0°",
+        "45°",
+        "60°",
+        "90°"
+      ],
+      "answer": 3
+    },
+    {
+      "id": 8,
+      "type": "mc",
+      "topic": "Bài 25",
+      "question": "Một điều kiện đủ để (P) vuông góc (Q) là:",
+      "options": [
+        "(P) chứa một đường vuông góc (Q)",
+        "(P) chứa một đường song song (Q)",
+        "(P) cắt (Q)",
+        "(P) có một điểm thuộc (Q)"
+      ],
+      "answer": 0
+    },
+    {
+      "id": 9,
+      "type": "mc",
+      "topic": "Bài 26",
+      "question": "Khoảng cách từ M đến (P) là:",
+      "options": [
+        "Độ dài đoạn nối tùy ý",
+        "Độ dài đoạn vuông góc từ M đến (P)",
+        "Độ dài hình chiếu của M",
+        "Khoảng cách giữa hai điểm trong (P)"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 10,
+      "type": "mc",
+      "topic": "Bài 26",
+      "question": "Khoảng cách giữa hai đường thẳng chéo nhau bằng độ dài:",
+      "options": [
+        "Một đoạn nối tùy ý",
+        "Đoạn vuông góc chung",
+        "Một cạnh hình hộp",
+        "Hình chiếu của đường này lên đường kia"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 11,
+      "type": "mc",
+      "topic": "Bài 27",
+      "question": "Thể tích khối lăng trụ có diện tích đáy S, chiều cao h bằng:",
+      "options": [
+        "S+h",
+        "S·h",
+        "(1/2)S·h",
+        "(1/3)S·h"
+      ],
+      "answer": 1
+    },
+    {
+      "id": 12,
+      "type": "mc",
+      "topic": "Bài 27",
+      "question": "Thể tích khối chóp có diện tích đáy S, chiều cao h bằng:",
+      "options": [
+        "S·h",
+        "(1/2)S·h",
+        "(1/3)S·h",
+        "3S·h"
+      ],
+      "answer": 2
+    },
+    {
+      "id": 13,
+      "type": "tf",
+      "topic": "Bài 23",
+      "question": "Đánh giá các phát biểu.",
+      "statements": [
+        [
+          "Nếu d vuông góc với hai đường cắt nhau thuộc (P) thì d vuông góc (P).",
+          true
+        ],
+        [
+          "Hai đường phân biệt cùng vuông góc (P) thì vuông góc nhau.",
+          false
+        ],
+        [
+          "Qua một điểm có duy nhất một đường vuông góc với một mặt phẳng cho trước.",
+          true
+        ],
+        [
+          "Mặt phẳng trung trực của AB chứa các điểm cách đều A và B.",
+          true
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "type": "tf",
+      "topic": "Bài 24",
+      "question": "Đánh giá các phát biểu.",
+      "statements": [
+        [
+          "Phép chiếu vuông góc là trường hợp của phép chiếu song song.",
+          true
+        ],
+        [
+          "Góc giữa đường thẳng và mặt phẳng luôn lớn hơn 90°.",
+          false
+        ],
+        [
+          "Có thể dùng hình chiếu để xác định góc đường thẳng – mặt phẳng.",
+          true
+        ],
+        [
+          "Nếu đường thẳng vuông góc mặt phẳng thì hình chiếu của nó là một điểm.",
+          true
+        ]
+      ]
+    },
+    {
+      "id": 15,
+      "type": "tf",
+      "topic": "Bài 25",
+      "question": "Đánh giá các phát biểu.",
+      "statements": [
+        [
+          "Hai mặt phẳng vuông góc có góc giữa chúng 90°.",
+          true
+        ],
+        [
+          "Nếu một mặt phẳng chứa đường vuông góc với mặt phẳng kia thì hai mặt phẳng vuông góc.",
+          true
+        ],
+        [
+          "Góc nhị diện chỉ nhận giá trị 0° đến 90°.",
+          false
+        ],
+        [
+          "Hình lập phương là trường hợp đặc biệt của hình hộp chữ nhật.",
+          true
+        ]
+      ]
+    },
+    {
+      "id": 16,
+      "type": "tf",
+      "topic": "Bài 26",
+      "question": "Đánh giá các phát biểu.",
+      "statements": [
+        [
+          "Khoảng cách điểm – mặt phẳng là khoảng cách nhỏ nhất.",
+          true
+        ],
+        [
+          "Khoảng cách hai đường chéo nhau bằng độ dài đoạn vuông góc chung.",
+          true
+        ],
+        [
+          "Mọi đoạn nối hai đường chéo nhau đều có cùng độ dài.",
+          false
+        ],
+        [
+          "Khoảng cách giữa hai mặt phẳng song song là không đổi.",
+          true
+        ]
+      ]
+    },
+    {
+      "id": 17,
+      "type": "short",
+      "topic": "Bài 24",
+      "question": "Một đường thẳng vuông góc mặt phẳng. Góc giữa chúng bằng bao nhiêu độ?",
+      "answer": 90,
+      "unit": "độ"
+    },
+    {
+      "id": 18,
+      "type": "short",
+      "topic": "Bài 25",
+      "question": "Độ dốc tối đa 1/12. Góc dốc tối đa xấp xỉ bao nhiêu độ?",
+      "answer": 4.8,
+      "unit": "độ",
+      "tolerance": 0.1
+    },
+    {
+      "id": 19,
+      "type": "short",
+      "topic": "Bài 26",
+      "question": "Đoạn vuông góc chung dài 5,5 m. Khoảng cách giữa hai đường chéo nhau là bao nhiêu?",
+      "answer": 5.5,
+      "unit": "m"
+    },
+    {
+      "id": 20,
+      "type": "short",
+      "topic": "Bài 26",
+      "question": "Tỉ lệ 1:100, khoảng cách thực 6 m. Khoảng cách mô hình bao nhiêu cm?",
+      "answer": 6,
+      "unit": "cm"
+    },
+    {
+      "id": 21,
+      "type": "short",
+      "topic": "Bài 27",
+      "question": "Khối hộp chữ nhật 4 m × 4 m × 5 m có thể tích bao nhiêu?",
+      "answer": 80,
+      "unit": "m³"
+    },
+    {
+      "id": 22,
+      "type": "short",
+      "topic": "Bài 27",
+      "question": "Cần 200 BTU cho mỗi m³. Phòng 80 m³ cần bao nhiêu BTU?",
+      "answer": 16000,
+      "unit": "BTU"
+    }
+  ]
+}
