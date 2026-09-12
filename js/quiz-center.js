@@ -1,10 +1,11 @@
 ﻿/**
  * Quiz Center Module - Toán 11 Chương VII
  * Đọc từ quiz.json: 22 câu hỏi (Trắc nghiệm, Đúng/Sai đa mệnh đề, Trả lời ngắn)
+ * Chế độ thi tính giờ hiển thị trọn vẹn 22 câu hỏi với bảng điều hướng câu hỏi
  */
 
 const QuizCenter = {
-  mode: 'practice', // 'practice' | 'exam'
+  mode: 'exam', // Default to exam mode so all 22 questions are immediately prominent!
   currentFilter: 'all',
   answers: {}, // { [qId]: user_answer }
   examSubmitted: false,
@@ -27,10 +28,10 @@ const QuizCenter = {
 
     const { meta, questions } = data.quiz;
 
-    // Filter questions
-    const filteredQuestions = this.currentFilter === 'all' 
+    // In EXAM mode, ALWAYS render all 22 questions! In practice mode, allow filtering.
+    const questionsToRender = (this.mode === 'exam') 
       ? questions 
-      : questions.filter(q => q.topic.includes(this.currentFilter));
+      : (this.currentFilter === 'all' ? questions : questions.filter(q => q.topic.includes(this.currentFilter)));
 
     container.innerHTML = `
       <!-- Header Banner -->
@@ -43,76 +44,124 @@ const QuizCenter = {
             <span class="px-3 py-1 bg-rose-500/30 border border-rose-400/40 text-rose-200 text-xs font-semibold rounded-full uppercase tracking-wider">
               Trung tâm kiểm tra & Đánh giá
             </span>
-            <span class="px-3 py-1 bg-white/10 text-slate-300 text-xs font-medium rounded-full">
-              22 câu hỏi bám sát chuẩn SGK
+            <span class="px-3 py-1 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold rounded-full flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              Đầy đủ 22 câu hỏi chuẩn SGK
             </span>
           </div>
           <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-2">
             ${meta.title}
           </h1>
           <p class="text-rose-100 text-sm md:text-base leading-relaxed mb-4">
-            Đánh giá năng lực tư duy không gian và vận dụng hình học Chương VII qua 3 dạng thức đề thi mới: Trắc nghiệm 4 lựa chọn, Đúng/Sai nhiều ý, và Trả lời ngắn.
+            Đánh giá toàn diện năng lực hình học không gian Chương VII qua 3 phần thi chuẩn đề thi mới của Bộ GD&ĐT: 12 câu Trắc nghiệm, 4 câu Đúng/Sai, 6 câu Trả lời ngắn.
           </p>
         </div>
       </div>
 
-      <!-- Controls & Filter Bar -->
-      <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-slate-200/80 mb-8 flex flex-wrap items-center justify-between gap-4">
-        <!-- Topic Filter -->
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Chủ đề:</span>
-          ${['all', 'Bài 22', 'Bài 23', 'Bài 24', 'Bài 25', 'Bài 26', 'Bài 27'].map(f => `
-            <button 
-              onclick="QuizCenter.setFilter('${f}')"
-              class="px-3 py-1.5 rounded-lg text-xs font-semibold transition ${this.currentFilter === f ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
-              ${f === 'all' ? 'Tất cả 22 câu' : f}
-            </button>
-          `).join('')}
-        </div>
-
-        <!-- Mode Toggle & Exam Timer -->
+      <!-- Controls & Mode Bar -->
+      <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-slate-200/80 mb-6 flex flex-wrap items-center justify-between gap-4">
+        
+        <!-- Mode Switcher -->
         <div class="flex items-center gap-3">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Chế độ:</span>
           <div class="flex items-center bg-slate-100 p-1 rounded-xl">
             <button 
-              onclick="QuizCenter.setMode('practice')" 
-              class="px-3 py-1 rounded-lg text-xs font-bold transition ${this.mode === 'practice' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-600'}">
-              Luyện tập tự do
+              onclick="QuizCenter.setMode('exam')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${this.mode === 'exam' ? 'bg-rose-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'}">
+              <i class="lucide-timer w-3.5 h-3.5"></i>
+              Thi tính giờ (Đủ 22 câu)
             </button>
             <button 
-              onclick="QuizCenter.setMode('exam')" 
-              class="px-3 py-1 rounded-lg text-xs font-bold transition ${this.mode === 'exam' ? 'bg-white text-rose-700 shadow-sm' : 'text-slate-600'}">
-              Thi tính giờ
+              onclick="QuizCenter.setMode('practice')" 
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${this.mode === 'practice' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'}">
+              <i class="lucide-book-open w-3.5 h-3.5"></i>
+              Luyện tập tự do
             </button>
           </div>
+        </div>
 
-          ${this.mode === 'exam' ? `
-            <div class="flex items-center gap-2 px-3 py-1.5 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 font-mono text-xs font-bold">
-              <i class="lucide-clock w-4 h-4"></i>
-              <span id="exam-timer-display">${this.formatTime(this.timeLeft)}</span>
+        <!-- Timer (In Exam Mode) -->
+        ${this.mode === 'exam' ? `
+          <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2 px-4 py-2 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 font-mono text-sm font-bold shadow-sm">
+              <i class="lucide-clock w-4 h-4 animate-pulse text-rose-600"></i>
+              <span>Thời gian:</span>
+              <span id="exam-timer-display" class="text-base font-black">${this.formatTime(this.timeLeft)}</span>
             </div>
-          ` : ''}
+            ${!this.examSubmitted ? `
+              <button 
+                onclick="QuizCenter.submitExam()" 
+                class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
+                <i class="lucide-send w-3.5 h-3.5"></i> Nộp bài
+              </button>
+            ` : ''}
+          </div>
+        ` : `
+          <!-- Topic Filter (In Practice Mode) -->
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Lọc bài:</span>
+            ${['all', 'Bài 22', 'Bài 23', 'Bài 24', 'Bài 25', 'Bài 26', 'Bài 27'].map(f => `
+              <button 
+                onclick="QuizCenter.setFilter('${f}')"
+                class="px-2.5 py-1 rounded-lg text-xs font-semibold transition ${this.currentFilter === f ? 'bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+                ${f === 'all' ? 'Tất cả (22)' : f}
+              </button>
+            `).join('')}
+          </div>
+        `}
+      </div>
+
+      <!-- 22-Question Navigator Palette -->
+      <div class="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-200/80 mb-8 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="lucide-grid w-4 h-4 text-indigo-600"></i>
+            Bảng 22 câu hỏi thi – Nhấn để chuyển nhanh đến câu:
+          </h3>
+          <div class="flex items-center gap-3 text-xs">
+            <span class="flex items-center gap-1 text-slate-500">
+              <span class="w-2.5 h-2.5 rounded-full bg-slate-200"></span> Chưa làm
+            </span>
+            <span class="flex items-center gap-1 text-emerald-600 font-semibold">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Đã làm
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-11 sm:grid-cols-22 gap-1.5 pt-1">
+          ${questions.map(q => {
+            const isAnswered = this.isQuestionAnswered(q.id, q.type);
+            return `
+              <button 
+                onclick="QuizCenter.scrollToQuestion(${q.id})"
+                id="palette-btn-${q.id}"
+                class="h-9 rounded-lg font-bold text-xs transition flex flex-col items-center justify-center border ${isAnswered ? 'bg-emerald-600 text-white border-emerald-700 shadow-sm' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'}">
+                <span>${q.id}</span>
+              </button>
+            `;
+          }).join('')}
         </div>
       </div>
 
       <!-- Exam Result Summary (If submitted) -->
-      <div id="exam-result-panel" class="hidden mb-8"></div>
+      <div id="exam-result-panel" class="${this.examSubmitted ? 'block' : 'hidden'} mb-8"></div>
 
       <!-- Questions List Container -->
       <div class="space-y-6" id="quiz-question-list">
-        ${filteredQuestions.map((q, idx) => this.renderQuestion(q, idx)).join('')}
+        ${this.renderGroupedQuestions(questionsToRender)}
       </div>
 
       <!-- Exam Action Footer -->
       ${this.mode === 'exam' && !this.examSubmitted ? `
         <div class="mt-8 p-6 bg-white rounded-2xl shadow-sm border border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <div class="text-sm font-bold text-slate-800">Hoàn thành bài thi?</div>
-            <div class="text-xs text-slate-500">Hãy kiểm tra lại các câu hỏi trước khi nộp bài.</div>
+            <div class="text-sm font-bold text-slate-800">Hoàn thành bài thi 22 câu?</div>
+            <div class="text-xs text-slate-500">Hệ thống sẽ chấm điểm chi tiết và hiển thị ma trận kết quả.</div>
           </div>
           <button 
             onclick="QuizCenter.submitExam()" 
             class="px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm rounded-xl shadow-md transition flex items-center gap-2">
-            <i class="lucide-send w-4 h-4"></i> Nộp bài thi & Chấm điểm
+            <i class="lucide-send w-4 h-4"></i> Nộp bài thi & Chấm điểm (22 câu)
           </button>
         </div>
       ` : ''}
@@ -132,6 +181,68 @@ const QuizCenter = {
       this.startExamTimer();
     }
   },
+
+  isQuestionAnswered(qId, type) {
+    if (type === 'mc') {
+      return this.answers[qId] !== undefined;
+    } else if (type === 'tf') {
+      const sub = this.answers[qId];
+      return sub && Object.keys(sub).length > 0;
+    } else if (type === 'short') {
+      return this.answers[qId] !== undefined && !isNaN(this.answers[qId]);
+    }
+    return false;
+  },
+
+  scrollToQuestion(qId) {
+    const el = document.getElementById(`qc-card-${qId}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('ring-4', 'ring-indigo-500/40');
+      setTimeout(() => el.classList.remove('ring-4', 'ring-indigo-500/40'), 1500);
+    }
+  },
+
+  renderGroupedQuestions(questions) {
+    // If in exam mode, group into Part I (MC), Part II (TF), Part III (Short)
+    if (this.mode === 'exam') {
+      const part1 = questions.filter(q => q.type === 'mc');
+      const part2 = questions.filter(q => q.type === 'tf');
+      const part3 = questions.filter(q => q.type === 'short');
+
+      return `
+        <!-- PHẦN 1 -->
+        <div class="space-y-4">
+          <div class="p-3 bg-indigo-50 border border-indigo-200 rounded-xl text-indigo-900 font-bold text-xs uppercase tracking-wider flex items-center justify-between">
+            <span>Phần I: Câu trắc nghiệm nhiều phương án lựa chọn (Câu 1 đến Câu 12)</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-600 text-white text-[11px]">12 câu</span>
+          </div>
+          ${part1.map((q, idx) => this.renderQuestion(q, idx)).join('')}
+        </div>
+
+        <!-- PHẦN 2 -->
+        <div class="space-y-4 mt-8">
+          <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-900 font-bold text-xs uppercase tracking-wider flex items-center justify-between">
+            <span>Phần II: Câu trắc nghiệm Đúng / Sai (Câu 13 đến Câu 16)</span>
+            <span class="px-2 py-0.5 rounded bg-amber-600 text-white text-[11px]">4 câu (16 mệnh đề)</span>
+          </div>
+          ${part2.map((q, idx) => this.renderQuestion(q, idx)).join('')}
+        </div>
+
+        <!-- PHẦN 3 -->
+        <div class="space-y-4 mt-8">
+          <div class="p-3 bg-sky-50 border border-sky-200 rounded-xl text-sky-900 font-bold text-xs uppercase tracking-wider flex items-center justify-between">
+            <span>Phần III: Câu trắc nghiệm trả lời ngắn (Câu 17 đến Câu 22)</span>
+            <span class="px-2 py-0.5 rounded bg-sky-600 text-white text-[11px]">6 câu</span>
+          </div>
+          ${part3.map((q, idx) => this.renderQuestion(q, idx)).join('')}
+        </div>
+      `;
+    }
+
+    // Otherwise render regular list
+    return questions.map((q, idx) => this.renderQuestion(q, idx)).join('');
+  },
   setFilter(filter) {
     this.currentFilter = filter;
     this.render('tab-quiz');
@@ -141,6 +252,7 @@ const QuizCenter = {
     this.mode = newMode;
     this.examSubmitted = false;
     this.answers = {};
+    this.currentFilter = 'all'; // Always reset filter to all!
     if (newMode === 'exam') {
       this.timeLeft = 25 * 60;
     } else {
@@ -177,7 +289,7 @@ const QuizCenter = {
 
     if (q.type === 'mc') {
       return `
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4" id="qc-card-${q.id}">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4 transition-all" id="qc-card-${q.id}">
           <div class="flex items-start justify-between gap-3">
             <div class="flex items-center gap-2">
               <span class="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0">
@@ -218,7 +330,7 @@ const QuizCenter = {
       `;
     } else if (q.type === 'tf') {
       return `
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4" id="qc-card-${q.id}">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4 transition-all" id="qc-card-${q.id}">
           <div class="flex items-start justify-between gap-3">
             <div class="flex items-center gap-2">
               <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 font-bold text-xs flex items-center justify-center shrink-0">
@@ -263,7 +375,7 @@ const QuizCenter = {
       `;
     } else if (q.type === 'short') {
       return `
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4" id="qc-card-${q.id}">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 space-y-4 transition-all" id="qc-card-${q.id}">
           <div class="flex items-start justify-between gap-3">
             <div class="flex items-center gap-2">
               <span class="w-7 h-7 rounded-lg bg-sky-100 text-sky-800 font-bold text-xs flex items-center justify-center shrink-0">
@@ -316,6 +428,7 @@ const QuizCenter = {
   handleSelectMC(qId, selectedIdx, correctIdx) {
     if (this.examSubmitted) return;
     this.answers[qId] = selectedIdx;
+    this.updatePaletteItem(qId, true);
 
     if (this.mode === 'practice') {
       const fb = document.getElementById(`qc-fb-${qId}`);
@@ -343,6 +456,17 @@ const QuizCenter = {
     }
   },
 
+  updatePaletteItem(qId, isAnswered) {
+    const btn = document.getElementById(`palette-btn-${qId}`);
+    if (btn) {
+      if (isAnswered) {
+        btn.className = 'h-9 rounded-lg font-bold text-xs transition flex flex-col items-center justify-center border bg-emerald-600 text-white border-emerald-700 shadow-sm';
+      } else {
+        btn.className = 'h-9 rounded-lg font-bold text-xs transition flex flex-col items-center justify-center border bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100';
+      }
+    }
+  },
+
   getMCOptionClass(q, optIdx) {
     const userAns = this.answers[q.id];
     if (this.mode === 'practice') {
@@ -365,6 +489,7 @@ const QuizCenter = {
     if (this.examSubmitted) return;
     if (!this.answers[qId]) this.answers[qId] = {};
     this.answers[qId][sIdx] = val;
+    this.updatePaletteItem(qId, true);
     this.render('tab-quiz');
   },
 
@@ -383,7 +508,9 @@ const QuizCenter = {
 
   handleInputShort(qId, val) {
     if (this.examSubmitted) return;
-    this.answers[qId] = parseFloat(val);
+    const num = parseFloat(val);
+    this.answers[qId] = num;
+    this.updatePaletteItem(qId, !isNaN(num));
   },
 
   checkPracticeShort(qId, correctAns, tolerance, unit) {
@@ -399,6 +526,7 @@ const QuizCenter = {
     }
 
     this.answers[qId] = val;
+    this.updatePaletteItem(qId, true);
     const isCorrect = Math.abs(val - correctAns) <= (tolerance || 0.01);
     fb.classList.remove('hidden');
     fb.className = `p-3 rounded-xl text-xs leading-relaxed ${isCorrect ? 'bg-emerald-50 text-emerald-900 border border-emerald-200' : 'bg-rose-50 text-rose-900 border border-rose-200'}`;
@@ -435,7 +563,6 @@ const QuizCenter = {
     q.statements.forEach(([_, correctVal], sIdx) => {
       if (userSub[sIdx] === correctVal) correctCount++;
     });
-    // Vietnam graduation exam scoring for TF: 1 ý: 0.1, 2 ý: 0.25, 3 ý: 0.5, 4 ý: 1.0
     let pts = 0;
     if (correctCount === 1) pts = 0.1;
     else if (correctCount === 2) pts = 0.25;
@@ -495,7 +622,6 @@ const QuizCenter = {
 
     const scaledScore = ((totalScore / 22) * 10).toFixed(2);
 
-    // Save to localStorage
     try {
       localStorage.setItem('toan11_quiz_last_score', scaledScore);
     } catch (e) {}
@@ -510,9 +636,9 @@ const QuizCenter = {
         <div class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-2xl p-6 md:p-8 shadow-xl border border-indigo-500/30">
           <div class="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 font-bold text-xs rounded-full">KẾT QUẢ THI TOÁN 11 – CHƯƠNG VII</span>
+              <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 font-bold text-xs rounded-full">KẾT QUẢ THI TOÁN 11 – CHƯƠNG VII (22 CÂU)</span>
               <h2 class="text-3xl font-extrabold mt-2">Điểm số: <span class="text-amber-400">${scaledScore} / 10</span></h2>
-              <p class="text-xs text-slate-400 mt-1">Đạt ${totalScore.toFixed(2)} / 22 điểm thô.</p>
+              <p class="text-xs text-slate-400 mt-1">Đạt ${totalScore.toFixed(2)} / 22 điểm thô chuẩn.</p>
             </div>
             <div class="grid grid-cols-3 gap-3 text-center text-xs">
               <div class="p-3 rounded-xl bg-white/10">
@@ -531,6 +657,7 @@ const QuizCenter = {
           </div>
         </div>
       `;
+      resPanel.scrollIntoView({ behavior: 'smooth' });
     }
   }
 };

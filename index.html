@@ -111,11 +111,16 @@
         </button>
       </nav>
 
-      <!-- External Source Link / Status Badge -->
+      <!-- External Source Link & AI Tutor Trigger -->
       <div class="flex items-center gap-2">
-        <span class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+        <button 
+          onclick="AiTutor.toggleDialog()"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-sm shadow-purple-500/20 hover:scale-105">
+          <span>🤖 Hỏi AI Giáo viên</span>
+        </button>
+        <span class="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-          GitHub Pages Ready
+          GitHub Pages
         </span>
       </div>
     </div>
@@ -198,6 +203,7 @@
   <script src="js/stem-challenge.js"></script>
   <script src="js/quiz-center.js"></script>
   <script src="js/references.js"></script>
+  <script src="js/ai-tutor.js"></script>
   <script src="js/app.js"></script>
 
 </body>

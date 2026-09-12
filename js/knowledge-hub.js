@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Knowledge Hub Module - Toán 11 Chương VII
  * Đọc hoàn toàn từ knowledge.json và liên kết chéo với modeling.json & quiz.json
  */
@@ -328,9 +328,9 @@ const KnowledgeHub = {
             ${quizQuestions.map((q, qIdx) => KnowledgeHub.renderInlineQuestion(q, qIdx)).join('')}
           </div>
           <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span class="text-xs text-slate-500">Muốn làm bài thi có bấm giờ và tính điểm tổng?</span>
-            <button onclick="App.switchTab('quiz')" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
-              Mở Quiz Center <i class="lucide-arrow-right w-3.5 h-3.5"></i>
+            <span class="text-xs text-slate-500">Muốn làm đề thi 25 phút đủ 22 câu hỏi toàn chương?</span>
+            <button onclick="QuizCenter.setMode('exam'); App.switchTab('quiz')" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded-lg text-xs font-bold flex items-center gap-1.5 transition">
+              <i class="lucide-timer w-3.5 h-3.5"></i> Mở Đề thi tính giờ (Đủ 22 câu) <i class="lucide-arrow-right w-3.5 h-3.5"></i>
             </button>
           </div>
         </div>
