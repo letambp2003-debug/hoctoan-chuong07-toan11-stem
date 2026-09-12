@@ -1,4 +1,4 @@
-﻿# Toán 11 – Chương VII: Quan hệ vuông góc trong không gian
+# Toán 11 – APP AI GIÁO VIÊN TOÁN
 ## Ứng dụng Web Học tập Tương tác, Mô hình hóa & STEM Challenge
 
 Ứng dụng web học tập Toán 11 – Chương VII (Tập 2) được thiết kế hiện đại, nạp dữ liệu động 100% từ thư mục `/data/` và sẵn sàng vận hành trên **GitHub Pages**.
